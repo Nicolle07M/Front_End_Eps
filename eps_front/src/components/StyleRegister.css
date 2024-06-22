@@ -1,0 +1,67 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor del formulario */
+  .form-container {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezado */
+  .form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Grupo de formularios */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Etiquetas */
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  /* Entradas y select */
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Botón de envío */
+  .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
