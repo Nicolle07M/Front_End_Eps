@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './StyleRegister.css';
-import axios from 'axios'; // Importa Axios
+import axios from 'axios';
 
 const RegisterDoctor = () => {
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
     age: '',
-    especialidad_id: '', // Cambiado a especialidad_id para coincidir con el controlador Laravel
+    especialidad_id: '',
     email: '',
     password: ''
   });
@@ -42,7 +42,7 @@ const RegisterDoctor = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${endpoint}/doctores`, formData); // Cambiado a '/doctores' según la convención RESTful de Laravel
+      const response = await axios.post(`${endpoint}/doctores`, formData);
       console.log('Datos del formulario enviados:', response.data);
       setSuccess('Registro exitoso');
       setError(null);
@@ -50,7 +50,7 @@ const RegisterDoctor = () => {
       console.error('Error al enviar los datos:', err);
       setError('Hubo un problema con el registro');
       if (err.response && err.response.data) {
-        console.error('Detalles del error:', err.response.data); // Imprime detalles del error Laravel
+        console.error('Detalles del error:', err.response.data);
       }
       setSuccess(null);
     }
@@ -95,7 +95,7 @@ const RegisterDoctor = () => {
         <div className="form-group">
           <label>Especialidad:</label>
           <select 
-            name="especialidad_id" // Cambiado a especialidad_id para coincidir con el controlador Laravel
+            name="especialidad_id" 
             value={formData.especialidad_id} 
             onChange={handleChange} 
             required
