@@ -30,7 +30,7 @@ const Login = () => {
           <img src={logo} alt="Logo EPS Sanadora" className="logo1" />
           <h6>EPS Sanadora</h6>
         </div>
-        <Link to="/register" className="login-button">Regresar</Link>
+        <Link to="/registro" className="login-button">Regresar</Link>
       </nav>
       <div className="login-container">
         <h2>Iniciar Sesión como Administrador</h2>

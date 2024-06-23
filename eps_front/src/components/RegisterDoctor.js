@@ -66,7 +66,7 @@ const RegisterDoctor = () => {
     <img src={logo} alt="Logo EPS Sanadora" className="logo1" />
     <h6>EPS Sanadora</h6>
   </div>
-  <Link to="/login" className="login-button">Login</Link>
+  <Link to="/" className="login-button">Regresar</Link>
 </nav>
 
       {/* Contenido principal */}
