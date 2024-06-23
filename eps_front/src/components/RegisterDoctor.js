@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './StyleRegister.css';
 import axios from 'axios';
 import logo from '../logo1.png';
-import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+import { Link } from 'react-router-dom';
 
 const RegisterDoctor = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,7 @@ const RegisterDoctor = () => {
   const [especialidades, setEspecialidades] = useState([]);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const fetchEspecialidades = async () => {
@@ -58,23 +59,32 @@ const RegisterDoctor = () => {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div>
-      {/* Navegador en la parte superior */}
-     <nav className="navbar">
-  <div className="logo-container">
-    <img src={logo} alt="Logo EPS Sanadora" className="logo1" />
-    <h6>EPS Sanadora</h6>
-  </div>
-  <Link to="/" className="login-button">Regresar</Link>
-</nav>
+      <nav className="navbar">
+        <div className="logo-container">
+          <img src={logo} alt="Logo EPS Sanadora" className="logo1" />
+          <h6>EPS Sanadora</h6>
+        </div>
+        <button className="hamburger-button" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+          <Link to="/" className="login-button">Regresar</Link>
+        </div>
+      </nav>
 
-      {/* Contenido principal */}
       <div className="register-container">
         <div className="info-container">
           <h2>
             EPS Sanadora: Tu aliado en salud 
-            <br></br>
+            <br />
             <img src={logo} className="logo" alt="Logo EPS Sanadora" />
           </h2>
           <p>
@@ -143,7 +153,7 @@ const RegisterDoctor = () => {
               </select>
             </div>
             <div className="form-group">
-              <label>Correo:</label>
+              <label>Email:</label>
               <input 
                 type="email" 
                 name="email" 
@@ -162,15 +172,14 @@ const RegisterDoctor = () => {
                 required 
               />
             </div>
-            <button type="submit" className="submit-button">Registrar</button>
+            <button type="submit" className="submit-button">Registrarse</button>
           </form>
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="footer">
-        <h6>Derechos reservados © 2024 EPS Sanadora</h6>
-      </div>
+      <footer className="footer">
+        <h6>EPS Sanadora © 2023</h6>
+      </footer>
     </div>
   );
 };
