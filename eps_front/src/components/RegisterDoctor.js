@@ -68,7 +68,7 @@ const RegisterDoctor = () => {
       <nav className="navbar">
         <div className="logo-container">
           <img src={logo} alt="Logo EPS Sanadora" className="logo1" />
-          <h6>EPS Sanadora</h6>
+          <h6>EPS Health Haven</h6>
         </div>
         <button className="hamburger-button" onClick={toggleMenu}>
           <span></span>
@@ -83,21 +83,21 @@ const RegisterDoctor = () => {
       <div className="register-container">
         <div className="info-container">
           <h2>
-            EPS Sanadora: Tu aliado en salud 
+            EPS Health Haven: Tu aliado en salud 
             <br />
             <img src={logo} className="logo" alt="Logo EPS Sanadora" />
           </h2>
           <p>
-            En EPS Sanadora nos dedicamos a garantizar tu bienestar integral con un enfoque humano y profesional. Nuestro compromiso va más allá de la atención médica; nos esforzamos por ofrecer servicios de calidad que se adapten a tus necesidades individuales y familiares.
+            En EPS Health Haven nos dedicamos a garantizar tu bienestar integral con un enfoque humano y profesional. Nuestro compromiso va más allá de la atención médica; nos esforzamos por ofrecer servicios de calidad que se adapten a tus necesidades individuales y familiares.
           </p>
           <p>
             Nuestro equipo de especialistas altamente capacitados está listo para cuidar de ti en cada etapa de tu vida. Desde consultas médicas hasta tratamientos especializados, estamos aquí para proporcionarte la mejor atención posible. Nos enorgullece ser parte de tu camino hacia una vida más saludable y feliz.
           </p>
           <p>
-            En EPS Sanadora, valoramos tu confianza y trabajamos continuamente para mejorar nuestros servicios. Nos preocupamos por cada detalle de tu experiencia, desde la primera consulta hasta el seguimiento de tu recuperación. Tu salud es nuestra prioridad número uno.
+            En EPS Health Haven, valoramos tu confianza y trabajamos continuamente para mejorar nuestros servicios. Nos preocupamos por cada detalle de tu experiencia, desde la primera consulta hasta el seguimiento de tu recuperación. Tu salud es nuestra prioridad número uno.
           </p>
           <p>
-            Únete a la familia EPS Sanadora y experimenta la diferencia en la atención médica que mereces. Estamos aquí para cuidarte hoy, mañana y siempre.
+            Únete a la familia EPS Health Haven y experimenta la diferencia en la atención médica que mereces. Estamos aquí para cuidarte hoy, mañana y siempre.
           </p>
         </div>
 
@@ -178,7 +178,7 @@ const RegisterDoctor = () => {
       </div>
 
       <footer className="footer">
-        <h6>EPS Sanadora © 2023</h6>
+        <h6>EPS Health Haven © 2023</h6>
       </footer>
     </div>
   );

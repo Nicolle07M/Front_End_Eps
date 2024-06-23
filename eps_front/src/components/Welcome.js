@@ -14,7 +14,7 @@ const Welcome = () => {
       <nav className="navbar">
         <div className="logo-container">
           <img src={logo} alt="Logo EPS Sanadora" className="logo" />
-          <h6>EPS Sanadora</h6>
+          <h6>EPS Health Haven</h6>
         </div>
         <button className="hamburger" onClick={toggleMenu}>
           ☰
@@ -25,7 +25,7 @@ const Welcome = () => {
         </div>
       </nav>
       <div className="content">
-        <h2>Bienvenido a EPS Sanadora</h2>
+        <h2>Bienvenido a EPS Health Haven</h2>
         <p>
           En EPS Sanadora nos dedicamos a garantizar tu bienestar integral con un enfoque humano y profesional. Nuestro compromiso va más allá de la atención médica; nos esforzamos por ofrecer servicios de calidad que se adapten a tus necesidades individuales y familiares.
         </p>
@@ -37,7 +37,7 @@ const Welcome = () => {
         </p>
       </div>
       <footer className="footer">
-        <h6>Derechos reservados © 2024 EPS Sanadora</h6>
+        <h6>Derechos reservados © 2024 EPS Health Haven</h6>
       </footer>
     </div>
   );
