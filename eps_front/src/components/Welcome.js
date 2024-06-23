@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Welcome.css'; // Archivo de estilos para la vista de bienvenida
 import logo from '../logo1.png'; // Importa tu logo
 
 const Welcome = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="welcome-container">
       <nav className="navbar">
@@ -10,8 +16,13 @@ const Welcome = () => {
           <img src={logo} alt="Logo EPS Sanadora" className="logo" />
           <h6>EPS Sanadora</h6>
         </div>
-        <a href="/registro" className="login-button1">Registrate Doctor!</a>
-        <a href="/login" className="login-button">Login</a>
+        <button className="hamburger" onClick={toggleMenu}>
+          ☰
+        </button>
+        <div className={`menu ${menuOpen ? 'open' : ''}`}>
+          <a href="/registro" className="login-button">Registrate Doctor!</a>
+          <a href="/login" className="login-button">Login</a>
+        </div>
       </nav>
       <div className="content">
         <h2>Bienvenido a EPS Sanadora</h2>
