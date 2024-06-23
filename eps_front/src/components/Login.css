@@ -1,59 +1,93 @@
-/* Estilos del contenedor de login */
+.navbar {
+  background-color: #007bff; /* Color de fondo del navbar */
+  color: #ffffff; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo1 {
+  width: 50px; /* Ancho del logo */
+  height: auto; /* Altura automática para mantener la proporción */
+  margin-right: 10px; /* Espacio a la derecha del logo */
+}
+
+.navbar h6 {
+  font-size: 1.5rem; /* Tamaño del texto del título */
+}
+
+.login-button {
+  background-color: transparent; /* Fondo transparente */
+  color: #ffffff; /* Color del texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  font-size: 1rem; /* Tamaño del texto */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.login-button:hover {
+  text-decoration: underline; /* Subrayado al pasar por encima */
+}
 .login-container {
-    background-color: #fff;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  /* Encabezado */
-  .login-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Grupo de formularios */
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  /* Etiquetas */
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  /* Entradas */
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .form-group input:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  /* Botón de envío */
-  .submit-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
+  background-color: #fff;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Encabezado */
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Grupo de formularios */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Etiquetas */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Entradas */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Botón de envío */
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

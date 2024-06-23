@@ -1,67 +1,116 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
+.register-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info-container {
+  flex: 1;
+  padding: 80px;
+  background-color: #ffffff;
+  margin-left: 20px;
+}
+.footer {
+  background-color: #007bff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer h6 {
+  color: #ffffff; /* Color del texto */
+  margin: 0; /* Elimina el margen por defecto del h6 */
+}
+
+.navbar {
+  background-color: #007bff; /* Color de fondo del navbar */
+  color: #ffffff; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+  font-weight: bold;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
   
-  /* Contenedor del formulario */
-  .form-container {
-    background-color: #fff;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Encabezado */
-  .form-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Grupo de formularios */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  /* Etiquetas */
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  /* Entradas y select */
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  /* Botón de envío */
-  .submit-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+.logo {
+  width: 320px; /* Ancho del logo */
+  height: 320px; /* Altura automática para mantener la proporción */
+  margin-right: 10px; /* Espacio a la derecha del logo */
+  margin-left: 30px;
+}
+
+.logo1 {
+  width: 50px; /* Ancho del logo */
+  height: auto; /* Altura automática para mantener la proporción */
+  margin-right: 10px; /* Espacio a la derecha del logo */
+  margin-left: 30px;
+}
+
+.login-button {
+  background-color: transparent; /* Fondo transparente */
+  color: #ffffff; /* Color del texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  font-size: 1rem; /* Tamaño del texto */
+  text-decoration: none; /* Sin subrayado */
+  margin-right: 50px; 
+}
+
+.login-button:hover {
+  text-decoration: underline; /* Subrayado al pasar por encima */
+}
+
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  margin-right: 50px;
+  height: 710px;
+
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+

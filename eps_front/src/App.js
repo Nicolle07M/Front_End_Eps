@@ -8,14 +8,16 @@ import CreateDoctor from './components/CreateDoctor';
 import ShowDoctors from './components/ShowDoctors';
 import RegisterDoctor from './components/RegisterDoctor';
 import Login from './components/Login';
+import Welcome from './components/Welcome';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar /> {/* Añade la barra de navegación aquí */}
+         {/* Añade la barra de navegación aquí */}
         <Routes>
-          <Route path="/" element={<RegisterDoctor/>} />
+        <Route path="/" element={<Welcome/>} />
+          <Route path="/registro" element={<RegisterDoctor/>} />
           <Route path="/create" element={<CreateDoctor />} />
           <Route path="/edit/:id" element={<EditDoctor />} />
           <Route path="/doctors" element={<ShowDoctors />} />
