@@ -1,17 +1,10 @@
 /* Estilos generales para la vista de bienvenida */
 
-/* Establece altura mínima para ocupar todo el espacio vertical */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Contenedor principal */
-  .welcome-container {
+/* Contenedor principal */
+.welcome-container {
     display: flex;
     flex-direction: column;
-    min-height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura visible del viewport */
   }
   
   /* Navbar */
@@ -22,6 +15,11 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el navbar esté por encima del contenido */
   }
   
   .logo-container {
@@ -40,6 +38,11 @@ html, body {
     margin: 0; /* Elimina el margen por defecto del h6 */
   }
   
+  .login-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
   .login-button {
     background-color: transparent;
     color: #ffffff;
@@ -47,7 +50,17 @@ html, body {
     cursor: pointer;
     font-size: 1rem;
     text-decoration: none;
-    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .login-button1 {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-left: 1420px;
   }
   
   .login-button:hover {
@@ -56,7 +69,6 @@ html, body {
   
   /* Contenido */
   .content {
-    flex: 1; /* Aprovecha todo el espacio restante */
     margin-top: 80px; /* Ajusta el margen superior para evitar que se solape con el navbar */
     text-align: left;
     padding: 20px;
@@ -79,5 +91,12 @@ html, body {
     text-align: center;
     padding: 10px 0;
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .footer h6 {
+    margin: 0;
   }
   

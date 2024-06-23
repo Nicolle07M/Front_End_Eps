@@ -10,7 +10,7 @@ const Welcome = () => {
           <img src={logo} alt="Logo EPS Sanadora" className="logo" />
           <h6>EPS Sanadora</h6>
         </div>
-        <a href="/registro" className="login-button">Registrate Doctor!</a>
+        <a href="/registro" className="login-button1">Registrate Doctor!</a>
         <a href="/login" className="login-button">Login</a>
       </nav>
       <div className="content">
