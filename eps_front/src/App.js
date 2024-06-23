@@ -9,6 +9,8 @@ import ShowDoctors from './components/ShowDoctors';
 import RegisterDoctor from './components/RegisterDoctor';
 import Login from './components/Login';
 import Welcome from './components/Welcome';
+import ShowEspecialidades from './components/ShowEspecialidades';
+import CreateEspecialidad from './components/CreateEspecialidad';
 
 function App() {
   return (
@@ -19,8 +21,10 @@ function App() {
         <Route path="/" element={<Welcome/>} />
           <Route path="/registro" element={<RegisterDoctor/>} />
           <Route path="/create" element={<CreateDoctor />} />
+          <Route path="/createEspecialidades" element={<CreateEspecialidad />} />
           <Route path="/edit/:id" element={<EditDoctor />} />
           <Route path="/doctors" element={<ShowDoctors />} />
+          <Route path="/especialidades" element={<ShowEspecialidades />} />
           {/* Añade una ruta para el componente de Log In */}
           <Route path="/login" element={<Login />} />
         </Routes>
