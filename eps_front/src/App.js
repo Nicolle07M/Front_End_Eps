@@ -11,6 +11,7 @@ import Login from './components/Login';
 import Welcome from './components/Welcome';
 import ShowEspecialidades from './components/ShowEspecialidades';
 import CreateEspecialidad from './components/CreateEspecialidad';
+import EditEspecialidad from './components/EditEspecialidad';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/create" element={<CreateDoctor />} />
           <Route path="/createEspecialidades" element={<CreateEspecialidad />} />
           <Route path="/edit/:id" element={<EditDoctor />} />
+          <Route path="/editEspecialidad/:id" element={<EditEspecialidad />} />
           <Route path="/doctors" element={<ShowDoctors />} />
           <Route path="/especialidades" element={<ShowEspecialidades />} />
           {/* Añade una ruta para el componente de Log In */}

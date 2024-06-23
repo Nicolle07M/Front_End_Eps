@@ -30,7 +30,7 @@ const CreateEspecialidad = () => {
                     <h6>EPS Sanadora</h6>
                 </div>
                 <div className="links">
-                    <a href="/doctors" className="nav-link">Lista de Doctores</a>
+                    <a href="/especialidades" className="nav-link">Lista de Especialidades</a>
                 </div>
             </nav>
             <div className="container">

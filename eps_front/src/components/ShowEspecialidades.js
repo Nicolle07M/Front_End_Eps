@@ -55,7 +55,7 @@ const ShowEspecialidades = () => {
                                 <tr key={especialidades.id}>
                                     <td>{especialidades.name}</td>
                                     <td>
-                                        <Link to={`/edit/${especialidades.id}`} className="btn btn-warning btn-edit">
+                                        <Link to={`/editEspecialidad/${especialidades.id}`} className="btn btn-warning btn-edit">
                                             Editar
                                         </Link>
                                         <button onClick={() => deleteEspecialidad(especialidades.id)} className="btn btn-danger btn-delete">
