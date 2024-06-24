@@ -44,6 +44,11 @@ const ShowDoctors = () => {
         }
     };
 
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/login'; // Redirige al usuario al login después de hacer logout
+    };
+
     return (
         <div>
             <nav className="navbar">
@@ -53,6 +58,9 @@ const ShowDoctors = () => {
                 </div>
                 <div className="links">
                     <Link to="/especialidades" className="nav-link">Lista de especialidades</Link>
+                    <button onClick={handleLogout} className="btn btn-link nav-link">
+                        Logout
+                    </button>
                 </div>
             </nav>
 
