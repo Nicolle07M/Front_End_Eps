@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -31,6 +32,10 @@ if (token) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 }
 
+const toggleMenu = () => {
+  setIsMenuOpen(!isMenuOpen);
+};
+
   return (
     <div>
       <nav className="navbar">
@@ -38,7 +43,15 @@ if (token) {
           <img src={logo} alt="Logo EPS Sanadora" className="logo1" />
           <h6>EPS Health Haven</h6>
         </div>
-        <Link to="/registro" className="login-button">Regresar</Link>
+        <button className="hamburger-button" onClick={toggleMenu}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+        </button>
+        <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+        <Link to="/registro" className="btn btn-outline-light btn-nav1">Regresar</Link>
+                </div>
+
       </nav>
       <div className="login-container">
         <h2>Iniciar Sesión como Administrador</h2>
