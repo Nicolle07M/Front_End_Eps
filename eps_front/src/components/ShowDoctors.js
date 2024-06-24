@@ -8,19 +8,40 @@ const endpoint = 'http://localhost:8000/api';
 
 const ShowDoctors = () => {
     const [doctores, setDoctores] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         getAllDoctores();
     }, []);
 
     const getAllDoctores = async () => {
-        const response = await axios.get(`${endpoint}/doctores`);
-        setDoctores(response.data);
+        try {
+            const response = await axios.get(`${endpoint}/doctores`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            if (Array.isArray(response.data)) {
+                setDoctores(response.data);
+            } else {
+                setError('La respuesta de la API no es un array');
+            }
+        } catch (error) {
+            setError('Error al obtener los doctores');
+        }
     };
 
     const deleteDoctor = async (id) => {
-        await axios.delete(`${endpoint}/doctores/${id}`);
-        getAllDoctores();
+        try {
+            await axios.delete(`${endpoint}/doctores/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            getAllDoctores();
+        } catch (error) {
+            setError('Error al eliminar el doctor');
+        }
     };
 
     return (
@@ -42,6 +63,8 @@ const ShowDoctors = () => {
                     </Link>
                 </div>
 
+                {error && <div className="alert alert-danger">{error}</div>}
+
                 <div className="table-responsive">
                     <table className="table table-striped table-hover">
                         <thead className="table-primary">
@@ -55,7 +78,7 @@ const ShowDoctors = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {doctores.map((doctor) => (
+                            {Array.isArray(doctores) && doctores.map((doctor) => (
                                 <tr key={doctor.id}>
                                     <td>{doctor.first_name}</td>
                                     <td>{doctor.last_name}</td>

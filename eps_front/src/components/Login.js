@@ -2,26 +2,34 @@ import React, { useState } from 'react';
 import './Login.css'; // Importa el archivo CSS para los estilos
 import logo from '../logo1.png';
 import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    correo: '',
-    contraseña: ''
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para manejar el inicio de sesión
-    console.log('Datos del formulario:', formData);
-  };
+    try {
+        const response = await axios.post('http://localhost:8000/api/login', {
+            email,
+            password
+        });
+        localStorage.setItem('token', response.data.token);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
+        navigate('/doctors');
+    } catch (error) {
+        console.error('Error logging in', error);
+    }
+};
+
+// Configuración de Axios para usar el token de autenticación en todas las solicitudes
+const token = localStorage.getItem('token');
+if (token) {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
 
   return (
     <div>
@@ -34,27 +42,25 @@ const Login = () => {
       </nav>
       <div className="login-container">
         <h2>Iniciar Sesión como Administrador</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Correo:</label>
-            <input 
-              type="email" 
-              name="correo" 
-              value={formData.correo} 
-              onChange={handleChange} 
-              required 
-            />
-          </div>
-          <div className="form-group">
-            <label>Contraseña:</label>
-            <input 
-              type="password" 
-              name="contraseña" 
-              value={formData.contraseña} 
-              onChange={handleChange} 
-              required 
-            />
-          </div>
+        <form onSubmit={handleLogin}>
+        <div className="mb-3">
+                    <label className="form-label">Email</label>
+                    <input
+                        type="email"
+                        className="form-control"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Password</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
           <button type="submit" className="submit-button">Iniciar Sesión</button>
         </form>
       </div>

@@ -12,6 +12,7 @@ import Welcome from './components/Welcome';
 import ShowEspecialidades from './components/ShowEspecialidades';
 import CreateEspecialidad from './components/CreateEspecialidad';
 import EditEspecialidad from './components/EditEspecialidad';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
          {/* Añade la barra de navegación aquí */}
         <Routes>
         <Route path="/" element={<Welcome/>} />
+        <Route path="/login" element={<Login />} />
+          <Route path="/doctors" element={<PrivateRoute><ShowDoctors /></PrivateRoute>} />
           <Route path="/registro" element={<RegisterDoctor/>} />
           <Route path="/create" element={<CreateDoctor />} />
           <Route path="/createEspecialidades" element={<CreateEspecialidad />} />
@@ -27,8 +30,6 @@ function App() {
           <Route path="/editEspecialidad/:id" element={<EditEspecialidad />} />
           <Route path="/doctors" element={<ShowDoctors />} />
           <Route path="/especialidades" element={<ShowEspecialidades />} />
-          {/* Añade una ruta para el componente de Log In */}
-          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
