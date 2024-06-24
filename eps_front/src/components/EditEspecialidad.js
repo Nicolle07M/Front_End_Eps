@@ -74,8 +74,8 @@ const EditEspecialidad = () => {
                     <span></span>
                 </button>
                 <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-                    <Link to="/especialidades" className="btn btn-outline-light btn-nav1">Lista de Especialidades</Link>
-                    <button onClick={handleLogout} className="btn btn-outline-light btn-nav1">
+                    <Link to="/especialidades" className="btn btn-outline-light btn-nav">Lista de Especialidades</Link>
+                    <button onClick={handleLogout} className="btn btn-outline-light btn-nav">
                         Logout
                     </button>
                 </div>
