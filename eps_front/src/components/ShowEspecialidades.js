@@ -8,6 +8,7 @@ const endpoint = 'http://localhost:8000/api';
 
 const ShowEspecialidades = () => {
     const [especialidades, setEspecialidades] = useState([]);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         getAllEspecialidades();
@@ -23,6 +24,15 @@ const ShowEspecialidades = () => {
         getAllEspecialidades();
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/login'; // Redirige al usuario al login después de hacer logout
+    };
+
     return (
         <div>
             <nav className="navbar">
@@ -30,8 +40,16 @@ const ShowEspecialidades = () => {
                     <img src={logo} alt="Logo EPS Sanadora" className="logo" />
                     <h6>EPS Health Haven</h6>
                 </div>
-                <div className="links">
-                    <Link to="/doctors" className="nav-link">Lista de doctores</Link>
+                <button className="hamburger-button" onClick={toggleMenu}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+                    <Link to="/doctors" className="btn btn-outline-light btn-nav2">Lista de doctores</Link>
+                    <button onClick={handleLogout} className="btn btn-outline-light btn-nav2">
+                        Logout
+                    </button>
                 </div>
             </nav>
 

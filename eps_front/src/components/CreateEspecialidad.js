@@ -30,7 +30,7 @@ const CreateEspecialidad = () => {
                     <h6>EPS Sanadora</h6>
                 </div>
                 <div className="links">
-                    <a href="/especialidades" className="nav-link">Lista de Especialidades</a>
+                    <a href="/especialidades" className="btn btn-outline-light btn-nav1">Lista de Especialidades</a>
                 </div>
             </nav>
             <div className="container">
@@ -46,7 +46,7 @@ const CreateEspecialidad = () => {
                         />
                     </div>
             
-                    <button type='submit' className='btn btn-primary'>Guardar</button>
+                    <button type='submit' className='btn btn-success'>Guardar</button>
                 </form>
             </div>
             <footer className="footer">
