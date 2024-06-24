@@ -20,35 +20,79 @@ const EditDoctor = () => {
 
     useEffect(() => {
         const getEspecialidades = async () => {
-            const response = await axios.get(especialidadesEndpoint);
-            setEspecialidades(response.data);
+            try {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    throw new Error('No token found');
+                }
+
+                const response = await axios.get(especialidadesEndpoint, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setEspecialidades(response.data);
+            } catch (error) {
+                console.error(error);
+                alert('Error al obtener especialidades. Por favor, inicia sesión nuevamente.');
+                navigate('/login');
+            }
         };
 
         const getDoctorById = async () => {
-            const response = await axios.get(`${endpoint}${id}`);
-            setFirst_name(response.data.first_name);
-            setLast_name(response.data.last_name);
-            setAge(response.data.age);
-            setEspecialidad_id(response.data.especialidad_id);
-            setEmail(response.data.email);
-            setPassword(response.data.password);
+            try {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    throw new Error('No token found');
+                }
+
+                const response = await axios.get(`${endpoint}${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setFirst_name(response.data.first_name);
+                setLast_name(response.data.last_name);
+                setAge(response.data.age);
+                setEspecialidad_id(response.data.especialidad_id);
+                setEmail(response.data.email);
+                setPassword(response.data.password);
+            } catch (error) {
+                console.error(error);
+                alert('Error al obtener los detalles del doctor. Por favor, inicia sesión nuevamente.');
+                navigate('/login');
+            }
         };
 
         getEspecialidades();
         getDoctorById();
-    }, [id]);
+    }, [id, navigate]);
 
     const update = async (e) => {
         e.preventDefault();
-        await axios.put(`${endpoint}${id}`, {
-            first_name: first_name,
-            last_name: last_name,
-            age: age,
-            especialidad_id: especialidad_id,
-            email: email,
-            password: password
-        });
-        navigate('/doctors');
+        try {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                throw new Error('No token found');
+            }
+
+            await axios.put(`${endpoint}${id}`, {
+                first_name: first_name,
+                last_name: last_name,
+                age: age,
+                especialidad_id: especialidad_id,
+                email: email,
+                password: password
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            navigate('/doctors');
+        } catch (error) {
+            console.error(error);
+            alert('Error al actualizar el doctor. Por favor, intenta nuevamente.');
+        }
     };
 
     return (
@@ -59,7 +103,7 @@ const EditDoctor = () => {
                     <h6>EPS Health Haven</h6>
                 </div>
                 <div className="links">
-                    <a href="/doctors" className="nav-link">Lista de Doctores</a>
+                    <a href="/doctors" className="btn btn-outline-light btn-nav1">Lista de Doctores</a>
                 </div>
             </nav>
             <div className="container">
@@ -125,7 +169,7 @@ const EditDoctor = () => {
                             className='form-control'
                         />
                     </div>
-                    <button type='submit' className='btn btn-primary'>Actualizar</button>
+                    <button type='submit' className='btn btn-success'>Actualizar</button>
                 </form>
                 <footer className="footer">
                     <h6>EPS Health Haven © 2024</h6>

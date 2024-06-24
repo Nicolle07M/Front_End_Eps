@@ -45,10 +45,10 @@ const CreateDoctor = () => {
             <nav className="navbar">
                 <div className="logo-container">
                     <img src={logo} alt="Logo EPS Sanadora" className="logo" />
-                    <h6>EPS Sanadora</h6>
+                    <h6>EPS Health Haven</h6>
                 </div>
                 <div className="links">
-                    <a href="/doctors" className="nav-link">Lista de Doctores</a>
+                    <a href="/doctors" className="btn btn-outline-light btn-nav1">Lista de Doctores</a>
                 </div>
             </nav>
             <div className="container">
@@ -114,11 +114,11 @@ const CreateDoctor = () => {
                             className='form-control'
                         />
                     </div>
-                    <button type='submit' className='btn btn-primary'>Guardar</button>
+                    <button type='submit' className='btn btn-success'>Guardar</button>
                 </form>
             </div>
             <footer className="footer">
-                <h6>EPS Sanadora © 2023</h6>
+                <h6>EPS Health Haven © 2024</h6>
             </footer>
         </div>
     );

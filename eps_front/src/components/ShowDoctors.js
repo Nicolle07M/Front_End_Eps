@@ -67,9 +67,9 @@ const ShowDoctors = () => {
                     <span></span>
                 </button>
                 <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-                    <Link to="/especialidades" className="nav-link">Lista de especialidades</Link>
-                    <button onClick={handleLogout} className="btn btn-link nav-link">
-                        Logout
+                    <Link to="/especialidades" className="btn btn-outline-light btn-nav">Lista de especialidades</Link>
+                    <button onClick={handleLogout} className="btn btn-outline-light btn-nav">
+                        Log out
                     </button>
                 </div>
             </nav>

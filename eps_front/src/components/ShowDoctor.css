@@ -12,6 +12,7 @@
 
 .table-responsive {
     overflow-x: auto;
+    margin-bottom: 25px;
 }
 
 .table {
@@ -35,6 +36,7 @@
 }
 
 .btn-edit {
+    margin-bottom: 10px;
     margin-right: 8px;
 }
 
@@ -58,6 +60,10 @@
 .logo {
     width: 50px;
     margin-right: 10px;
+}
+.btn-nav {
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .hamburger-button {
@@ -96,6 +102,7 @@
 @media (max-width: 768px) {
     .hamburger-button {
         display: flex;
+        margin-bottom: 20px;
     }
 
     .navbar-links {
