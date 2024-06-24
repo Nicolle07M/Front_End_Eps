@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './ShowDoctor.css'; // Asegúrate de ajustar el nombre del archivo si es diferente
-import logo from '../logo1.png'; // Asegúrate de tener la ruta correcta a tu logo
+import logo from '../logo5.png'; // Asegúrate de tener la ruta correcta a tu logo
 
 const endpoint = 'http://localhost:8000/api';
 

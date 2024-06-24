@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './StyleRegister.css';
 import axios from 'axios';
-import logo from '../logo1.png';
+import logo from '../logo5.png';
 import { Link } from 'react-router-dom';
 
 const RegisterDoctor = () => {
@@ -76,7 +76,7 @@ const RegisterDoctor = () => {
           <span></span>
         </button>
         <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className="login-button">Regresar</Link>
+          <Link to="/" className="btn btn-outline-light btn-nav1">Regresar</Link>
         </div>
       </nav>
 
@@ -178,7 +178,7 @@ const RegisterDoctor = () => {
       </div>
 
       <footer className="footer">
-        <h6>EPS Health Haven © 2023</h6>
+        <h6>EPS Health Haven © 2024</h6>
       </footer>
     </div>
   );

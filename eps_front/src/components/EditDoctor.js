@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import './EditDoctor.css'; // Asegúrate de tener la ruta correcta a tu archivo CSS
-import logo from '../logo1.png'; // Asegúrate de tener la ruta correcta a tu logo
+import logo from '../logo5.png'; // Asegúrate de tener la ruta correcta a tu logo
 
 const endpoint = 'http://localhost:8000/api/doctores/';
 const especialidadesEndpoint = 'http://localhost:8000/api/especialidades';

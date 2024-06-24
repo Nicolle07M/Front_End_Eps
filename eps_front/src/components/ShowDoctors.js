@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './ShowDoctor.css';
-import logo from '../logo1.png';
+import logo from '../logo5.png';
 
 const endpoint = 'http://localhost:8000/api';
 

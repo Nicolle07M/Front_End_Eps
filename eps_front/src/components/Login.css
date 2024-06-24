@@ -13,7 +13,7 @@
 }
 
 .logo1 {
-  width: 50px; /* Ancho del logo */
+  width: 100px; /* Ancho del logo */
   height: auto; /* Altura automática para mantener la proporción */
   margin-right: 10px; /* Espacio a la derecha del logo */
 }

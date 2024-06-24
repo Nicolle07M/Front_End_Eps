@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css'; // Importa el archivo CSS para los estilos
-import logo from '../logo1.png';
+import logo from '../logo5.png';
 import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -36,7 +36,7 @@ if (token) {
       <nav className="navbar">
         <div className="logo-container">
           <img src={logo} alt="Logo EPS Sanadora" className="logo1" />
-          <h6>EPS Sanadora</h6>
+          <h6>EPS Health Haven</h6>
         </div>
         <Link to="/registro" className="login-button">Regresar</Link>
       </nav>
@@ -64,6 +64,9 @@ if (token) {
           <button type="submit" className="submit-button">Iniciar Sesión</button>
         </form>
       </div>
+      <footer className="footer">
+        <h6>EPS Health Haven © 2024</h6>
+      </footer>
     </div>
   );
 };

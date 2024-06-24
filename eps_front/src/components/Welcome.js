@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Welcome.css'; // Archivo de estilos para la vista de bienvenida
-import logo from '../logo1.png'; // Importa tu logo
+import logo from '../logo5.png'; // Importa tu logo
 
 const Welcome = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,8 +20,8 @@ const Welcome = () => {
           ☰
         </button>
         <div className={`menu ${menuOpen ? 'open' : ''}`}>
-          <a href="/registro" className="login-button">Registrate Doctor!</a>
-          <a href="/login" className="login-button">Login</a>
+          <a href="/registro" className="btn btn-outline-light btn-nav1">Registrate Doctor!</a>
+          <a href="/login" className="btn btn-outline-light btn-nav1">Login</a>
         </div>
       </nav>
       <div className="content">
@@ -37,7 +37,7 @@ const Welcome = () => {
         </p>
       </div>
       <footer className="footer">
-        <h6>Derechos reservados © 2024 EPS Health Haven</h6>
+        <h6>EPS Health Haven © 2024</h6>
       </footer>
     </div>
   );
