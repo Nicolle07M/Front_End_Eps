@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './ShowDoctor.css'; // Asegúrate de ajustar el nombre del archivo si es diferente
-import logo from '../logo1.png'; // Asegúrate de tener la ruta correcta a tu logo
+import './ShowDoctor.css';
+import logo from '../logo1.png';
 
 const endpoint = 'http://localhost:8000/api';
 
 const ShowDoctors = () => {
     const [doctores, setDoctores] = useState([]);
     const [error, setError] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         getAllDoctores();
@@ -46,7 +47,11 @@ const ShowDoctors = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        window.location.href = '/login'; // Redirige al usuario al login después de hacer logout
+        window.location.href = '/login';
+    };
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
     return (
@@ -56,7 +61,12 @@ const ShowDoctors = () => {
                     <img src={logo} alt="Logo EPS Sanadora" className="logo" />
                     <h6>EPS Health Haven</h6>
                 </div>
-                <div className="links">
+                <button className="hamburger-button" onClick={toggleMenu}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
                     <Link to="/especialidades" className="nav-link">Lista de especialidades</Link>
                     <button onClick={handleLogout} className="btn btn-link nav-link">
                         Logout

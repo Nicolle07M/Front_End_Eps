@@ -46,6 +46,7 @@ const ShowEspecialidades = () => {
                     <table className="table table-striped table-hover">
                         <thead className="table-primary">
                             <tr>
+                                <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Acciones</th>
                             </tr>
@@ -53,6 +54,7 @@ const ShowEspecialidades = () => {
                         <tbody>
                             {especialidades.map((especialidades) => (
                                 <tr key={especialidades.id}>
+                                    <td>{especialidades.id}</td>
                                     <td>{especialidades.name}</td>
                                     <td>
                                         <Link to={`/editEspecialidad/${especialidades.id}`} className="btn btn-warning btn-edit">
