@@ -25,7 +25,7 @@ const ShowDoctors = () => {
             if (Array.isArray(response.data)) {
                 setDoctores(response.data);
             } else {
-                setError('La respuesta de la API no es un array');
+                setError('No hay doctores registrados');
             }
         } catch (error) {
             setError('Error al obtener los doctores');
